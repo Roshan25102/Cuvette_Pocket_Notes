@@ -70,6 +70,7 @@ const GroupPopup = ({ addGroup, setShowGroupPopup }) => {
       >
         Create
       </button>
+      <span className="bg-lavender bg-pink bg-skyblue bg-coral bg-ultramarine bg-periwinkle" />
     </div>
   );
 };
