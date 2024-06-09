@@ -10,11 +10,19 @@ const NoteList = ({ notes }) => {
   }, [notes]);
 
   const formatDate = (date) => {
-    const formattedDate = new Date(date).toLocaleDateString("en-US", {
+    // Split the input date string by '/'
+    const [day, month, year] = date.split("/").map(Number);
+ 
+    // Create a new Date object using the parsed values
+    const parsedDate = new Date(year, month - 1, day); // month - 1 because months are zero-indexed in JS
+ 
+    // Format the date
+    const formattedDate = parsedDate.toLocaleDateString("en-US", {
       day: "numeric",
       month: "long",
       year: "numeric",
     });
+ 
     return ` ${formattedDate}`;
   };
 
